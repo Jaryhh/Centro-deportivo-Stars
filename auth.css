@@ -1,9 +1,10 @@
 /* Zona de cuenta fija en la esquina de la página principal */
 .account { position: fixed; top: 1rem; right: 1.5rem; z-index: 25; display: flex; align-items: center; gap: .8rem; }
 .btn.small { padding: .45rem 1.1rem; font-size: .9rem; }
+.account span { max-width: 9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* Página de acceso */
-.auth-page { min-height: 100vh; display: grid; place-items: center; padding: 1.5rem; background: url('images/hero.svg') center / cover no-repeat, var(--night); }
+.auth-page { min-height: 100vh; min-height: 100svh; display: grid; place-items: center; padding: 1.5rem; background: url('images/hero.svg') center / cover no-repeat, var(--night); }
 .auth-card { width: min(26rem, 100%); background: rgba(42, 30, 26, .96); border-top: 3px solid var(--ember); padding: 2rem; animation: fade .6s both; }
 .auth-card h1 { font-size: 2.4rem; text-transform: uppercase; margin-bottom: 1rem; }
 .tabs { display: flex; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(242, 230, 216, .2); }
@@ -28,3 +29,13 @@ body:not(.member) .protected { display: none; }
 
 /* Los datos que vienen de la sesión no se pueden editar */
 input[readonly] { opacity: .7; cursor: not-allowed; }
+
+/* Móvil: la zona de cuenta y los botones se adaptan a pantallas pequeñas */
+@media (max-width: 820px) {
+  .account { right: 1rem; }
+  .eye { width: 2.5rem; height: 2.5rem; }
+}
+@media (max-width: 480px) {
+  .account span { display: none; }
+  .auth-card { padding: 1.5rem; }
+}

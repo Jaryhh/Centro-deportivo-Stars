@@ -1,16 +1,21 @@
 // Menú móvil: abre y cierra el panel lateral
 const sidebar = document.getElementById('sidebar');
 const toggle = document.querySelector('.menu-toggle');
-toggle.addEventListener('click', () => {
-  const open = sidebar.classList.toggle('open');
+
+// Abre o cierra el panel y oscurece el resto de la página mientras está abierto
+function setMenu(open) {
+  sidebar.classList.toggle('open', open);
+  document.body.classList.toggle('menu-open', open);
   toggle.setAttribute('aria-expanded', open);
+}
+toggle.addEventListener('click', () => setMenu(!sidebar.classList.contains('open')));
+sidebar.addEventListener('click', e => { if (e.target.tagName === 'A') setMenu(false); });
+
+// Cierra el panel al tocar fuera de él o al pulsar Escape
+document.addEventListener('click', e => {
+  if (!sidebar.contains(e.target) && !toggle.contains(e.target)) setMenu(false);
 });
-sidebar.addEventListener('click', e => {
-  if (e.target.tagName === 'A') {
-    sidebar.classList.remove('open');
-    toggle.setAttribute('aria-expanded', false);
-  }
-});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 
 // Resalta en el menú la sección que está a la vista
 const links = [...document.querySelectorAll('.sidebar a')];
