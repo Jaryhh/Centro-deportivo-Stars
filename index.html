@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Centro Deportivo Stars</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+  <!-- Zona de cuenta: muestra el botón de acceso o el nombre del usuario -->
+  <div class="account" id="account"></div>
+
+  <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+
+  <aside class="sidebar" id="sidebar">
+    <nav>
+      <a href="#home" class="active">Inicio</a>
+      <a href="#about">Nosotros</a>
+      <a href="#activities">Actividades</a>
+      <a href="#schedules" class="protected">Horarios</a>
+      <a href="#calendar" class="protected">Calendario</a>
+      <a href="#news" class="protected">Noticias</a>
+      <a href="#contact" class="protected">Contacto</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h1><span>Centro</span><span>Deportivo</span><span>Stars</span></h1>
+        <p>Entrena, juega y compite. Voleibol, baloncesto, natación y más, para todas las edades.</p>
+        <a href="#schedules" class="btn" id="heroCta">Ver horarios</a>
+      </div>
+    </section>
+
+    <section class="block reveal" id="about">
+      <h2>Nosotros</h2>
+      <div class="about-grid">
+        <p>Somos un centro deportivo de barrio con entrenadores certificados, canchas techadas y piscina. Empezamos con
+          una sola cancha de voleibol y hoy recibimos a más de 600 socios cada semana.</p>
+        <ul class="stats">
+          <li><strong data-count="326">0</strong> socios activos</li>
+          <li><strong data-count="12">0</strong> entrenadores</li>
+          <li><strong data-count="6">0</strong> años de historia</li>
+        </ul>
+      </div>
+      <div class="values">
+        <p><b>Misión.</b> Que cada niño descubra el deporte que le gusta, haga amigos y crezca con confianza, en un
+          lugar seguro y con entrenadores que lo acompañan.</p>
+        <p><b>Visión.</b> Ser el lugar donde cada niño del barrio encuentre un deporte que le guste y quiera volver.</p>
+      </div>
+    </section>
+
+    <section class="block reveal" id="activities">
+      <h2>Actividades</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Voleibol</h3>
+          <p>Escuela infantil, liga juvenil y partidos libres al atardecer.</p>
+        </article>
+        <article class="card">
+          <h3>Baloncesto</h3>
+          <p>Fundamentos, técnica de tiro y torneos internos.</p>
+        </article>
+        <article class="card">
+          <h3>Natación</h3>
+          <p>Aprende a nadar o mejora tu estilo en carriles guiados.</p>
+        </article>
+        <article class="card">
+          <h3>Fútbol sala</h3>
+          <p>Ligas de fin de semana con árbitro y tabla de posiciones.</p>
+        </article>
+        <article class="card">
+          <h3>Funcional</h3>
+          <p>Circuitos de fuerza y resistencia en grupos pequeños.</p>
+        </article>
+        <article class="card">
+          <h3>Yoga</h3>
+          <p>Movilidad y respiración para recuperarte entre entrenos.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block reveal protected" id="schedules">
+      <h2>Horarios</h2>
+      <div class="filters" role="group" aria-label="Filtrar por día">
+        <button class="chip on" data-day="all">Todos</button>
+        <button class="chip" data-day="lun">Lunes</button>
+        <button class="chip" data-day="mie">Miércoles</button>
+        <button class="chip" data-day="vie">Viernes</button>
+        <button class="chip" data-day="sab">Sábado</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Día</th>
+              <th>Hora</th>
+              <th>Actividad</th>
+              <th>Lugar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-day="lun">
+              <td>Lunes</td>
+              <td>6:00 p. m.</td>
+              <td>Voleibol juvenil</td>
+              <td>Cancha 1</td>
+            </tr>
+            <tr data-day="lun">
+              <td>Lunes</td>
+              <td>7:30 p. m.</td>
+              <td>Funcional</td>
+              <td>Salón B</td>
+            </tr>
+            <tr data-day="mie">
+              <td>Miércoles</td>
+              <td>5:00 p. m.</td>
+              <td>Natación</td>
+              <td>Piscina</td>
+            </tr>
+            <tr data-day="mie">
+              <td>Miércoles</td>
+              <td>6:30 p. m.</td>
+              <td>Baloncesto</td>
+              <td>Cancha 2</td>
+            </tr>
+            <tr data-day="vie">
+              <td>Viernes</td>
+              <td>6:00 p. m.</td>
+              <td>Fútbol sala</td>
+              <td>Cancha 2</td>
+            </tr>
+            <tr data-day="vie">
+              <td>Viernes</td>
+              <td>7:30 p. m.</td>
+              <td>Yoga</td>
+              <td>Salón A</td>
+            </tr>
+            <tr data-day="sab">
+              <td>Sábado</td>
+              <td>9:00 a. m.</td>
+              <td>Escuela de voleibol</td>
+              <td>Cancha 1</td>
+            </tr>
+            <tr data-day="sab">
+              <td>Sábado</td>
+              <td>11:00 a. m.</td>
+              <td>Natación infantil</td>
+              <td>Piscina</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="block reveal protected" id="calendar">
+      <h2>Calendario</h2>
+      <div class="cal">
+        <div class="cal-head">
+          <button id="prev" aria-label="Mes anterior">‹</button>
+          <strong id="monthLabel"></strong>
+          <button id="next" aria-label="Mes siguiente">›</button>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+        <p class="cal-info" id="calInfo" aria-live="polite">Toca un día marcado para ver el evento.</p>
+      </div>
+    </section>
+
+    <section class="block reveal protected" id="news">
+      <h2>Noticias</h2>
+      <div class="cards news">
+        <article class="card"><time>Esta semana</time>
+          <h3>Abren inscripciones al torneo de voleibol</h3>
+          <p>Equipos mixtos de 6 jugadores. Cupos limitados hasta completar 16 equipos.</p>
+        </article>
+        <article class="card"><time>Este mes</time>
+          <h3>Nuevo horario de natación infantil</h3>
+          <p>Sumamos grupos los sábados por la mañana con instructores certificados.</p>
+        </article>
+        <article class="card"><time>Próximamente</time>
+          <h3>Jornada de puertas abiertas</h3>
+          <p>Prueba cualquier actividad gratis y conoce a los entrenadores.</p>
+        </article>
+        <article class="card"><time>Próximamente</time>
+          <h3>Jarinsson es el mas duro</h3>
+          <p>Tienen que ponerle un 100</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block reveal protected" id="contact">
+      <h2>Contacto</h2>
+      <div class="contact-grid">
+        <ul class="info">
+          <li><b>Dirección:</b> Calle Paraiso, #33</li>
+          <li><b>Teléfono:</b> (849) 650-6142</li>
+          <li><b>Correo:</b> info@centrostars.com</li>
+          <li><b>Abierto:</b> lunes a sábado, 6:00 a. m. a 9:00 p. m.</li>
+        </ul>
+        <form id="contactForm" novalidate>
+          <label>Nombre<input name="nombre" required></label>
+          <label>Correo<input name="correo" type="email" required></label>
+          <label>Mensaje<textarea name="mensaje" rows="4" required></textarea></label>
+          <button class="btn" type="submit">Enviar mensaje</button>
+          <p class="form-msg" id="formMsg" aria-live="polite"></p>
+        </form>
+      </div>
+      <footer>© <span id="year"></span> Centro Deportivo Stars - Yoameli - Zurisadai - Jogeimis - Jarinsson</footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+</body>
+
+</html>
